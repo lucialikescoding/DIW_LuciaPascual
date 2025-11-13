@@ -1,0 +1,336 @@
+:root {
+  --color-fondo: #FCF2CE;
+  --color-header: #CF9788;
+  --color-caja: #D1E5A0; 
+  --color-texto: #333;
+  --color-acento: #CF9788;
+  --darkmode-caja: #705D3A;
+  --darkmode-fondo: #342929;
+  --darkmode-acento: #A16758;
+
+  --fuente-titulo: 'princess Sofia';
+  --fuente-texto: 'Cormoramt Upright', serif;
+}
+
+/* Toggle dark mode (CSS-only): checkbox placed as first child of <body>
+   The page content is wrapped in `.site` so we can target it with the
+   general sibling selector: #modo-toggle:checked ~ .site */
+#modo-toggle {
+  position: absolute;
+  left: -9999px;
+}
+
+.site {
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  transition: background-color 300ms ease, color 300ms ease;
+}
+
+/* Cuando el checkbox esté marcado, aplicamos colores oscuros a los
+   bloques principales. */
+#modo-toggle:checked ~ .site {
+  background-color: #0f1720;
+  color: #e6e6e6;
+}
+
+#modo-toggle:checked ~ .site header {
+  background-color: #162029;
+}
+
+#modo-toggle:checked ~ .site footer {
+  background-color: #162029;
+}
+
+#modo-toggle:checked ~ .site .galeria,
+#modo-toggle:checked ~ .site .bibliografia,
+#modo-toggle:checked ~ .site section {
+  background-color: #1f2a2a;
+  color: #e6e6e6;
+}
+
+#modo-toggle:checked ~ .site .contenido article {
+  background-color: #172426;
+  border-color: #b87a6b;
+  color: #e6e6e6;
+}
+
+#modo-toggle:checked ~ .site .btn,
+#modo-toggle:checked ~ .site .modo {
+  background-color: #1f2a2a;
+  color: #e6e6e6;
+}
+
+/* Estilo del label que actúa como botón */
+.modo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 36px;
+  font-size: 1.1rem;
+  padding: 0;
+}
+
+/* Títulos principales y de secciones */
+h1, h2, h3 {
+  font-family: var(--fuente-titulo);
+}
+
+/* Si quieres que también los subtítulos o secciones .texto tengan esa fuente */
+.contenido .texto h2 {
+  font-family: var(--fuente-titulo);
+}
+
+/* Y si deseas un toque más decorativo en toda la parte de la derecha */
+aside h3 {
+  font-family: var(--fuente-titulo);
+}
+
+
+/* --- ESTILO BASE --- */
+body {
+  margin: 0;
+  font-family: var(--fuente-texto);
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+}
+
+/* --- HEADER --- */
+header {
+  background-color: var(--color-header);
+  padding: 0.5rem 1rem;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.menu {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.logo img {
+  width: 87px;
+  height: 80px;
+  border-radius: 50%;
+  padding-left: 15px;
+}
+
+h1 {
+  flex: 1;
+  text-align: center;
+  font-family: var(--fuente-titulo);
+  font-size: 2.3rem;
+  margin: 0;
+}
+
+.btn,
+.modo {
+  background-color: var(--color-caja);
+  border: none;
+  border-radius: 15px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-family: var(--fuente-texto);
+}
+
+.acciones {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* --- MAIN LAYOUT --- */
+main {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+section {
+  background-color: #cde3a7;
+  border-radius: 15px;
+  padding: 1rem 1rem 0rem 1rem;
+}
+
+/* --- ARTÍCULOS PRINCIPALES --- */
+.contenido article {
+  border: 1px solid #CF9788;
+  border-radius: 15px;
+  padding: 1rem;
+  display: flex; /* Imagen + texto en fila */
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  height: 200px;
+}
+
+/* Imagen a la izquierda */
+.contenido article img {
+  width: 100px;
+  height: 150px;
+  border-radius: 15px;
+  flex: 0 0 100px;
+  align-self: center;
+  object-fit: cover;
+}
+
+/* Contenedor del título y párrafo */
+.contenido {
+  display: flex;
+  flex-direction: column; /* h2 encima de p */
+  justify-content: flex-start;
+}
+
+.contenido h2 {
+  margin: 0 0 0.25rem 0;
+  font-family: var(--fuente-titulo);
+  font-size: 1.8rem;
+  padding-top: 40px;
+}
+
+.contenido p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* --- ASIDE: Galería y Bibliografía --- */
+aside {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.galeria,
+.bibliografia {
+  background-color: var(--color-caja);
+  border-radius: 15px;
+  padding: 1rem;
+}
+
+h3 {
+  font-family: var(--fuente-titulo);
+  margin-top: 0;
+}
+
+/* --- GALERÍA DE IMÁGENES --- */
+.galeria {
+  background-color: var(--color-caja);
+  border-radius: 15px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.galeria h3 {
+  font-family: var(--fuente-titulo);
+  align-self:flex-start ;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+/* Contenedor de las imágenes */
+.imagenes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.imagenes img {
+  width: calc(50% - 0.5rem); /* Dos imágenes por fila con espacio entre ellas */
+  max-height: 250px;             /* Ajusta la altura según prefieras */
+  border-radius: 15px;       /* Opcional */
+  object-fit: cover;         /* Recorta la imagen para llenar el espacio sin deformar */ /* Si quieres mantener el efecto hover */
+}
+
+
+/* Bibliografía */
+.bibliografia h3 {
+  font-family: var(--fuente-titulo);
+  align-self:flex-start ;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.bibliografia ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.bibliografia a {
+  color: black;
+  text-decoration: none;
+}
+
+.bibliografia a:hover {
+  text-decoration: underline;
+}
+
+/* --- FOOTER --- */
+footer {
+  background-color: var(--color-header);
+  color: var(--color-texto);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+footer nav {
+  margin-top: 0.5rem;
+}
+
+footer a {
+  color: black;
+  margin: 0 1rem;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  .contenido article {
+    flex-direction: column; /* En móviles: imagen arriba, texto debajo */
+    align-items: center;
+    text-align: center;
+  }
+
+  .contenido article img {
+    width: 120px;
+    flex: none;
+  }
+
+  .contenido .texto {
+    align-items: center;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  @media (max-width: 700px) {
+    .imagenes img {
+      width: 90%;
+    }
+  }
+  .galeria .imagenes {
+    grid-template-columns: 1fr 1fr;
+  }
+}
