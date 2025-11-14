@@ -160,21 +160,30 @@ section {
 .contenido article {
   border: 1px solid #CF9788;
   border-radius: 15px;
-  padding: 1rem;
+  padding: clamp(0.75rem, 2vw, 1.5rem);
   display: flex; 
   align-items: flex-start;
-  gap: 1rem;
+  gap: clamp(0.75rem, 2vw, 1.5rem);
   margin-bottom: 1rem;
-  height: 200px;
+  flex-direction: row;
 }
 
 .contenido article img {
-  width: 100px;
-  height: 150px;
+  width: clamp(80px, 15vw, 120px);
+  height: clamp(120px, 20vw, 180px);
   border-radius: 15px;
-  flex: 0 0 100px;
+  flex: 0 0 clamp(80px, 15vw, 120px);
   align-self: center;
   object-fit: cover;
+  order: 1;
+}
+
+.contenido article > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  order: 2;
 }
 
 .contenido {
@@ -186,13 +195,16 @@ section {
 .contenido h2 {
   margin: 0 0 0.25rem 0;
   font-family: var(--fuente-titulo);
-  font-size: 1.8rem;
-  padding-top: 40px;
+  font-size: clamp(1.4rem, 4vw, 1.8rem);
+  padding-top: clamp(1.5rem, 3vh, 2.5rem);
+  flex: 1;
+  min-width: 200px;
 }
 
 .contenido p {
   margin: 0;
-  line-height: 1.4;
+  line-height: 1.5;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
 }
 
 aside {
@@ -300,8 +312,14 @@ footer a:hover {
   }
 
   .contenido article img {
-    width: 120px;
-    flex: none;
+    width: clamp(100px, 25vw, 150px);
+    height: clamp(150px, 35vw, 225px);
+    flex: 0 0 clamp(100px, 25vw, 150px);
+    order: 1;
+  }
+
+  .contenido article > div {
+    order: 2;
   }
 
   .contenido .texto {
