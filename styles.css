@@ -12,9 +12,6 @@
   --fuente-texto: 'Cormoramt Upright', serif;
 }
 
-/* Toggle dark mode (CSS-only): checkbox placed as first child of <body>
-   The page content is wrapped in `.site` so we can target it with the
-   general sibling selector: #modo-toggle:checked ~ .site */
 #modo-toggle {
   position: absolute;
   left: -9999px;
@@ -26,68 +23,70 @@
   transition: background-color 300ms ease, color 300ms ease;
 }
 
-/* Cuando el checkbox esté marcado, aplicamos colores oscuros a los
-   bloques principales. */
 #modo-toggle:checked ~ .site {
-  background-color: #0f1720;
-  color: #e6e6e6;
+  background-color: var(--darkmode-fondo);
+  color: #000000;
 }
 
 #modo-toggle:checked ~ .site header {
-  background-color: #162029;
+  background-color: var(--darkmode-caja);
+  color: var(--color-caja);
+}
+
+#modo-toggle:checked ~ .site footer a {
+  color: var(--color-caja);
+}
+
+#modo-toggle:checked ~ .site footer a:hover {
+  text-decoration: underline;
 }
 
 #modo-toggle:checked ~ .site footer {
-  background-color: #162029;
+  background-color: var(--darkmode-caja);
+  color: var(--color-caja);
 }
 
 #modo-toggle:checked ~ .site .galeria,
 #modo-toggle:checked ~ .site .bibliografia,
 #modo-toggle:checked ~ .site section {
-  background-color: #1f2a2a;
-  color: #e6e6e6;
+  background-color: var(--darkmode-caja);
+  color: var(--color-caja);
 }
 
 #modo-toggle:checked ~ .site .contenido article {
-  background-color: #172426;
-  border-color: #b87a6b;
-  color: #e6e6e6;
+ background-color: var(--darkmode-acento);
+ border: none;
+  color: #000000;
 }
 
 #modo-toggle:checked ~ .site .btn,
 #modo-toggle:checked ~ .site .modo {
-  background-color: #1f2a2a;
-  color: #e6e6e6;
+  background-color: var(--darkmode-acento);
+  color: #000000;
 }
 
-/* Estilo del label que actúa como botón */
 .modo {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 36px;
+  width: 4px;
+  height: 17px;
   font-size: 1.1rem;
   padding: 0;
 }
 
-/* Títulos principales y de secciones */
 h1, h2, h3 {
   font-family: var(--fuente-titulo);
 }
 
-/* Si quieres que también los subtítulos o secciones .texto tengan esa fuente */
 .contenido .texto h2 {
   font-family: var(--fuente-titulo);
 }
 
-/* Y si deseas un toque más decorativo en toda la parte de la derecha */
 aside h3 {
   font-family: var(--fuente-titulo);
 }
 
-
-/* --- ESTILO BASE --- */
 body {
   margin: 0;
   font-family: var(--fuente-texto);
@@ -95,7 +94,6 @@ body {
   color: var(--color-texto);
 }
 
-/* --- HEADER --- */
 header {
   background-color: var(--color-header);
   padding: 0.5rem 1rem;
@@ -146,7 +144,6 @@ h1 {
   gap: 0.5rem;
 }
 
-/* --- MAIN LAYOUT --- */
 main {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -160,19 +157,17 @@ section {
   padding: 1rem 1rem 0rem 1rem;
 }
 
-/* --- ARTÍCULOS PRINCIPALES --- */
 .contenido article {
   border: 1px solid #CF9788;
   border-radius: 15px;
   padding: 1rem;
-  display: flex; /* Imagen + texto en fila */
+  display: flex; 
   align-items: flex-start;
   gap: 1rem;
   margin-bottom: 1rem;
   height: 200px;
 }
 
-/* Imagen a la izquierda */
 .contenido article img {
   width: 100px;
   height: 150px;
@@ -182,10 +177,9 @@ section {
   object-fit: cover;
 }
 
-/* Contenedor del título y párrafo */
 .contenido {
   display: flex;
-  flex-direction: column; /* h2 encima de p */
+  flex-direction: column; 
   justify-content: flex-start;
 }
 
@@ -201,7 +195,6 @@ section {
   line-height: 1.4;
 }
 
-/* --- ASIDE: Galería y Bibliografía --- */
 aside {
   display: flex;
   flex-direction: column;
@@ -220,7 +213,6 @@ h3 {
   margin-top: 0;
 }
 
-/* --- GALERÍA DE IMÁGENES --- */
 .galeria {
   background-color: var(--color-caja);
   border-radius: 15px;
@@ -237,7 +229,6 @@ h3 {
   margin-bottom: 1rem;
 }
 
-/* Contenedor de las imágenes */
 .imagenes {
   display: flex;
   flex-wrap: wrap;
@@ -247,14 +238,12 @@ h3 {
 }
 
 .imagenes img {
-  width: calc(50% - 0.5rem); /* Dos imágenes por fila con espacio entre ellas */
-  max-height: 250px;             /* Ajusta la altura según prefieras */
-  border-radius: 15px;       /* Opcional */
-  object-fit: cover;         /* Recorta la imagen para llenar el espacio sin deformar */ /* Si quieres mantener el efecto hover */
+  width: calc(50% - 0.5rem); 
+  max-height: 250px;            
+  border-radius: 15px;       
+  object-fit: cover;        
 }
 
-
-/* Bibliografía */
 .bibliografia h3 {
   font-family: var(--fuente-titulo);
   align-self:flex-start ;
@@ -277,7 +266,6 @@ h3 {
   text-decoration: underline;
 }
 
-/* --- FOOTER --- */
 footer {
   background-color: var(--color-header);
   color: var(--color-texto);
@@ -300,14 +288,13 @@ footer a:hover {
   text-decoration: underline;
 }
 
-/* --- RESPONSIVE --- */
 @media (max-width: 900px) {
   main {
     grid-template-columns: 1fr;
   }
 
   .contenido article {
-    flex-direction: column; /* En móviles: imagen arriba, texto debajo */
+    flex-direction: column;
     align-items: center;
     text-align: center;
   }
