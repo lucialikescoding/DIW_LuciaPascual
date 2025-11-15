@@ -1,203 +1,535 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Folclore: El origen de las hadas</title>
-  <link rel="stylesheet" href="./styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Princess+Sofia&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="apple-touch-icon" sizes="180x180" href="./imagenes/logo.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="./imagenes/logo.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="./imagenes/logo.png">
-  <link rel="shortcut icon" href="./imagenes/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="./imagenes/favicon.svg" type="image/svg+xml">
-  <meta name="theme-color" content="#D1E5A0">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Folclore: El origen de las hadas</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Princess+Sofia&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="apple-touch-icon" sizes="180x180" href="./imagenes/logo.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./imagenes/logo.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./imagenes/logo.png"
+    />
+    <link
+      rel="shortcut icon"
+      href="./imagenes/favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="icon" href="./imagenes/favicon.svg" type="image/svg+xml" />
+    <meta name="theme-color" content="#D1E5A0" />
+  </head>
 
-<body>
-  <!-- Toggle para modo oscuro -->
-  <input type="checkbox" id="modo-toggle" class="modo-toggle" aria-hidden="true" />
-  <div class="site">
-
-    <!-- Header principal con navegación -->
-    <header>
-      <nav class="navbar">
-        <button class="menu" id="menu-btn" aria-expanded="false" aria-controls="panel">&#9776;</button>
-        <div class="logo">
-          <img src="./imagenes/logo.png" alt="Hada logo">
-        </div>
-        <h1>Folclore: El origen de las hadas</h1>
-        <div class="acciones">
-          <button class="btn">Iniciar sesión</button>
-          <label class="modo" for="modo-toggle">☀</label>
-        </div>
-      </nav>
-    </header>
-
-    <!-- Panel lateral oculto inicialmente -->
-    <div id="panel-overlay" class="panel-overlay" aria-hidden="true">
-      <div id="panel" class="panel" role="dialog" aria-modal="true">
-        <button class="btn cerrar-panel" id="cerrar-panel" aria-label="Cerrar panel">×</button>
-        <nav class="panel-nav">
-          <h3>Menú</h3>
-          <ul>
-            <li><a href="#" onclick="mostrarDetalle('introduccion'); return false;">Introducción</a></li>
-            <li><a href="#" onclick="mostrarDetalle('historia'); return false;">Historia</a></li>
-            <li><a href="#" onclick="mostrarDetalle('tipos'); return false;">Tipos de hadas</a></li>
-            <li><a href="#">Galería</a></li>
-          </ul>
+  <body>
+    <!-- Toggle para modo oscuro -->
+    <input
+      type="checkbox"
+      id="modo-toggle"
+      class="modo-toggle"
+      aria-hidden="true"
+    />
+    <div class="site">
+      <!-- Header principal con navegación -->
+      <header>
+        <nav class="navbar">
+          <button
+            class="menu"
+            id="menu-btn"
+            aria-expanded="false"
+            aria-controls="panel"
+          >
+            &#9776;
+          </button>
+          <div class="logo">
+            <img src="./imagenes/logo.png" alt="Hada logo" />
+          </div>
+          <h1>Folclore: El origen de las hadas</h1>
+          <div class="acciones">
+            <button class="btn">Iniciar sesión</button>
+            <label class="modo" for="modo-toggle">☀</label>
+          </div>
         </nav>
+      </header>
+
+      <!-- Panel lateral oculto inicialmente -->
+      <div id="panel-overlay" class="panel-overlay" aria-hidden="true">
+        <div id="panel" class="panel" role="dialog" aria-modal="true">
+          <button
+            class="btn cerrar-panel"
+            id="cerrar-panel"
+            aria-label="Cerrar panel"
+          >
+            ×
+          </button>
+          <nav class="panel-nav">
+            <h3>Menú</h3>
+            <ul>
+              <li>
+                <a
+                  href="#"
+                  onclick="mostrarDetalle('introduccion'); return false;"
+                  >Introducción</a
+                >
+              </li>
+              <li>
+                <a href="#" onclick="mostrarDetalle('historia'); return false;"
+                  >Historia</a
+                >
+              </li>
+              <li>
+                <a href="#" onclick="mostrarDetalle('tipos'); return false;"
+                  >Tipos de hadas</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
       </div>
+
+      <main>
+        <!-- Vista lista con artículos -->
+        <section class="contenido vista-lista" id="vista-lista">
+          <article onclick="mostrarDetalle('introduccion')">
+            <img src="./imagenes/intro.jpg" alt="Hada en flor de agua" />
+            <div>
+              <h2>Introducción</h2>
+              <p>
+                Las hadas son criaturas míticas o legendarias del folclore
+                europeo, concebidas como espíritus con cualidades metafísicas,
+                sobrenaturales o extraordinarias. Estas entidades forman parte
+                de relatos antiguos...
+              </p>
+            </div>
+          </article>
+
+          <article onclick="mostrarDetalle('historia')">
+            <img
+              src="./imagenes/historia.jpg"
+              alt="Portada libro demonología"
+            />
+            <div>
+              <h2>Historia</h2>
+              <p>
+                Las hadas modernas no provienen de un único origen. Su imagen
+                actual es el resultado de una mezcla de tradiciones del folclore
+                europeo, influencias literarias y especulaciones. En muchas
+                historias antiguas, su naturaleza es ambigua...
+              </p>
+            </div>
+          </article>
+
+          <article onclick="mostrarDetalle('tipos')">
+            <img src="./imagenes/tipos1.jpg" alt="Hada danzando" />
+            <div>
+              <h2>Tipos de hadas</h2>
+              <p>
+                Existen numerosas clases de hadas, aunque muchas de ellas son
+                independientes de la mitología celta de la que originalmente
+                derivan. Su estudio moderno combina distintas tradiciones y
+                especulaciones, mezclando elementos de diversas culturas y
+                mitologías...
+              </p>
+            </div>
+          </article>
+        </section>
+
+        <!-- Vista detalle: Introducción -->
+        <div class="vista-detalle" id="detalle-introduccion">
+          <section class="detalle-articulo">
+            <button class="btn volver" onclick="volverLista()">← Volver</button>
+
+            <div class="detalle-content">
+              <div class="detalle-texto">
+                <h2>Introducción</h2>
+                <p>
+                  Las hadas son criaturas míticas o legendarias del folclore
+                  europeo, concebidas como espíritus con cualidades metafísicas,
+                  sobrenaturales o extraordinarias. Estas entidades forman parte
+                  de relatos antiguos y poseen un carácter más profundo que la
+                  imagen común de seres diminutos con alas de mariposa.
+                </p>
+                <p>
+                  En las leyendas celtas se habla del reino de los Áes Sídhe
+                  (pronunciado As Shi), conocido en inglés como Fairy Folk. La
+                  traducción más cercana a nuestro idioma sería “hadas”, aunque
+                  no debe confundirse con la interpretación victoriana de estas
+                  criaturas, que las presenta como pequeñas y frágiles; esos
+                  serían en realidad pixies.
+                </p>
+                <p>
+                  Los Áes Sídhe son seres semidivinos que habitan entre este
+                  mundo y el otro, con fuertes vínculos con la naturaleza y las
+                  deidades. En la mayoría de los relatos se les describe como
+                  personas de estatura humana o ligeramente inferior, con piel
+                  clara, ojos luminosos y cabello muy oscuro.
+                </p>
+                <p>
+                  Según la mitología celta, estas hadas sienten una especial
+                  afinidad por ciertos árboles, especialmente los tilos y los
+                  sauces, donde se cree que disfrutan de su compañía y
+                  presencia.
+                </p>
+              </div>
+              <div class="detalle-imagenes">
+                <img
+                  src="./imagenes/intro.jpg"
+                  alt="Imagen 1 de la introducción"
+                />
+                <img
+                  src="./imagenes/fairy2.jpg"
+                  alt="Imagen 2 de la introducción"
+                />
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- Vista detalle: Historia -->
+        <div class="vista-detalle" id="detalle-historia">
+          <section class="detalle-articulo">
+            <button class="btn volver" onclick="volverLista()">← Volver</button>
+
+            <div class="detalle-content">
+              <div class="detalle-texto">
+                <h2>Historia</h2>
+                <p>
+                  Las hadas modernas no provienen de un único origen. Su imagen
+                  actual es el resultado de una mezcla de tradiciones del
+                  folclore europeo, influencias literarias y especulaciones. En
+                  muchas historias antiguas, su naturaleza es ambigua: podrían
+                  ser espíritus de los muertos, seres sobrenaturales
+                  independientes o incluso entidades con rasgos demoníacos. Las
+                  tradiciones que las describen combinan elementos celtas,
+                  germánicos y grecorromanos, y muchas teorías apuntan a que su
+                  concepción actual se desarrolló a partir de creencias
+                  religiosas que se perdieron con la expansión del cristianismo.
+                </p>
+                <p>
+                  Según el Rey Jacobo I, en su obra <em>Daemonologie</em>, el
+                  término "faries" se utilizaba para describir espíritus
+                  ilusorios, considerados entidades demoníacas, que podían
+                  profetizar, interactuar y transportar a las personas a las que
+                  servían. En la Edad Media se creía que una bruja o un
+                  hechicero que tuviera un pacto con un espíritu familiar podía
+                  recibir estos servicios y aprovechar su influencia para
+                  realizar diversas tareas.
+                </p>
+                <p>
+                  Otra interpretación de la tradición cristiana sostenía que las
+                  hadas eran ángeles caídos que no habían alcanzado la
+                  perfección del cielo, pero tampoco habían caído completamente
+                  en el infierno, lo que explicaría la idea de que debían pagar
+                  tributos al inframundo. Esta visión refleja la concepción
+                  moral y religiosa de la época sobre seres que no eran ni
+                  completamente buenos ni completamente malos.
+                </p>
+                <p>
+                  Algunos relatos sugieren que las hadas fueron originalmente
+                  veneradas como deidades menores, como ninfas o espíritus de
+                  los árboles, pero que con la llegada del cristianismo su poder
+                  se vio reducido y pasaron a considerarse malignas en la
+                  percepción popular. Las interpretaciones victorianas
+                  inventaron muchas historias, equiparando a estas deidades con
+                  fenómenos naturales, estrellas o símbolos del cielo nocturno,
+                  pero hoy en día estas explicaciones se consideran desfasadas.
+                </p>
+                <p>
+                  Otras tradiciones las describen directamente como demonios o
+                  seres peligrosos, especialmente durante el auge del
+                  puritanismo, cuando tratar con hadas se asociaba con brujería
+                  y podía ser castigado. Esta visión refleja el temor religioso
+                  hacia lo desconocido y lo sobrenatural.
+                </p>
+                <p>
+                  En paralelo, existía la creencia de que las hadas eran
+                  espíritus de los muertos. Se consideraba que compartían con
+                  los difuntos ciertas características: residir bajo tierra,
+                  habitar montículos antiguos, o mantener peligros similares al
+                  Hades para quienes se aventuraban en su mundo. Muchas leyendas
+                  contaban encuentros con vecinos fallecidos transformados en
+                  hadas, consolidando esta conexión con las almas que habían
+                  quedado incompletas.
+                </p>
+                <p>
+                  Algunas teorías sobre el origen del folclore de las hadas
+                  sostienen que proviene de recuerdos de pueblos prehistóricos
+                  desplazados por invasores. Estas historias reflejarían la
+                  memoria cultural de un mundo antiguo en el que los habitantes
+                  originales, superados por armas de hierro, se ocultaban en la
+                  tierra o subsistían en espacios subterráneos. Incluso las
+                  creencias victorianas sobre flechas de piedra o ropa verde se
+                  interpretaban como recuerdos de estas poblaciones que debían
+                  protegerse de invasores más fuertes.
+                </p>
+                <p>
+                  Otra perspectiva las considera como seres elementales e
+                  inteligentes, distintos de humanos y ángeles. En la alquimia y
+                  el pensamiento esotérico, se las comparaba con gnomos,
+                  sílfides o espíritus del aire. Esta interpretación, aunque no
+                  siempre presente en el folclore popular, destaca su naturaleza
+                  mágica y su relación con los elementos, y se observa en
+                  escritos teosofistas y alquímicos.
+                </p>
+              </div>
+              <div class="detalle-imagenes">
+                <img
+                  src="./imagenes/historia.jpg"
+                  alt="Imagen 1 de la historia"
+                />
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- Vista detalle: Tipos de hadas -->
+        <div class="vista-detalle" id="detalle-tipos">
+          <section class="detalle-articulo">
+            <button class="btn volver" onclick="volverLista()">← Volver</button>
+
+            <div class="detalle-content">
+              <div class="detalle-texto">
+                <h2>Tipos de hadas</h2>
+                <p>
+                  Existen numerosas clases de hadas, aunque muchas de ellas son
+                  independientes de la mitología celta de la que originalmente
+                  derivan. Su estudio moderno combina distintas tradiciones y
+                  especulaciones, mezclando elementos de diversas culturas y
+                  mitologías. Gran parte de estas clasificaciones son
+                  contemporáneas, desarrolladas por quienes estudian el
+                  esoterismo y el espiritismo.
+                </p>
+                <p>
+                  Entre las hadas más conocidas se encuentran las lamias de la
+                  tradición vasca, que poseen cabellos largos que peinan con
+                  peines de oro muy valorados. Sus pies son palmeados, similares
+                  a los de un pato, salvo las Itxaslamiak, lamias marinas
+                  parecidas a sirenas. En Galicia y Asturias, las mouras o xanas
+                  son consideradas hadas locales con características propias de
+                  esas regiones.
+                </p>
+                <p>
+                  En la mitología griega, las ninfas representan distintos
+                  aspectos de la naturaleza. Las náyades habitan los ríos y a
+                  veces se consideran hijas de estos. Las nereidas son ninfas
+                  marinas, hijas de Nereo, a menudo representadas con cola de
+                  pez, destacando figuras como Anfitrite y Tetis. Las oceánides,
+                  hijas del océano, incluyen a Metis y Doris. Las dríades
+                  habitan los bosques y, específicamente, los robles, mientras
+                  que las hamadríades están vinculadas a un árbol en particular,
+                  de modo que si este moría, ellas también. Las melíades,
+                  asociadas a los fresnos, son consideradas las ninfas más
+                  antiguas, nacidas de la sangre de Urano.
+                </p>
+                <p>
+                  Paracelso describió a los elementales del aire como sílfides,
+                  criaturas vinculadas a los vientos. Otras hadas elementales
+                  incluyen las salamandras del fuego y las drinfas de la tierra.
+                  Entre las hadas más populares en el folclore están el hada de
+                  los dientes, las banshee asociadas a la muerte, y las hadas
+                  del azúcar.
+                </p>
+                <p>
+                  Los Tuatha Dé Danann representan un grupo de seres con dones
+                  sobrenaturales en la mitología irlandesa, considerados
+                  originalmente dioses y diosas precristianos. Se cree que
+                  procedían de islas del norte o del cielo, y tras ser
+                  derrotados por otros seres sobrenaturales y por los ancestros
+                  de los actuales irlandeses, se retiraron a los montículos de
+                  hadas conocidos como Side. Estos seres se asocian con varios
+                  reinos del otro mundo, incluyendo Mag Mell (la llanura
+                  placentera), Emain Ablach (la fortaleza de manzanas) y Tir na
+                  nÓg (la tierra de la juventud).
+                </p>
+                <p>
+                  El término irlandés <em>Aos Sí</em> se refiere a una raza
+                  sobrenatural en Irlanda y Escocia comparable a las hadas o
+                  elfos. Generalmente se les considera espíritus de la
+                  naturaleza, ancestros o deidades. Muchas historias celtas
+                  describen a esta gente diminuta como obligada a ocultarse tras
+                  la llegada de invasores humanos. Los Aos Sí habitan cúmulos de
+                  tierra y piedra y son considerados inmortales. La banshee, o
+                  <em>bean sí</em> en gaélico, se describe a veces como un
+                  fantasma que anuncia la muerte, reflejando su vínculo con el
+                  mundo espiritual de las hadas.
+                </p>
+              </div>
+              <div>
+                <table border="1" cellpadding="5">
+                  <thead>
+                    <tr>
+                      <th>Tipo de hada</th>
+                      <th>Descripción</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Lamias</td>
+                      <td>
+                        Hadas vascas con cabello largo que peinan con peines de
+                        oro y pies palmeados; algunas son marinas.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Mouras / Xanas</td>
+                      <td>
+                        Hadas de Galicia y Asturias, asociadas a ríos y fuentes,
+                        guardianas de tesoros.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Náyades</td>
+                      <td>
+                        Ninfas griegas que habitan los ríos y a veces son hijas
+                        de estos.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Nereidas</td>
+                      <td>
+                        Ninfas del mar Mediterráneo, hijas de Nereo, a menudo
+                        representadas con cola de pez.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Dríades</td>
+                      <td>
+                        Ninfas de los bosques, especialmente ligadas a los
+                        robles.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Sílfides</td>
+                      <td>
+                        Hadas del aire, consideradas seres elementales del
+                        viento según Paracelso.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Salamandras</td>
+                      <td>Hadas del fuego, asociadas con este elemento.</td>
+                    </tr>
+                    <tr>
+                      <td>Banshee</td>
+                      <td>
+                        Hadas de la muerte, anunciadoras de fatalidades en la
+                        tradición irlandesa.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- Aside con galería y bibliografía -->
+        <aside>
+          <section class="galeria">
+            <h3>Galería de Imágenes</h3>
+            <div class="imagenes">
+              <img src="./imagenes/fairy2.jpg" alt="Hada en el estanque" />
+              <img src="./imagenes/fairy3.jpg" alt="Hada en el bosque" />
+              <img
+                src="./imagenes/fairy1.jpg"
+                alt="Pradera con setas y hadas"
+              />
+              <img src="./imagenes/fairyring.jpg" alt="Anillo de hadas" />
+            </div>
+          </section>
+
+          <section class="bibliografia">
+            <h3>Bibliografía</h3>
+            <ul>
+              <li><a href="#">https://mitologia.fandom.com/es/wiki/Hada</a></li>
+              <br />
+              <li><a href="#">https://es.wikipedia.org/wiki/Hada#Origen</a></li>
+            </ul>
+          </section>
+        </aside>
+      </main>
+
+      <!-- Footer -->
+      <footer>
+        <p>© 2025 Lucía Pascual López-Roca</p>
+        <a href="https://github.com/lucialikescoding/DIW_LuciaPascual.git"
+          >Github</a
+        >
+        <a href="www.linkedin.com/in/lucía-pascual-lópez-roca-8680b3185"
+          >Linkedin</a
+        >
+      </footer>
     </div>
 
-    <main>
-      <!-- Vista lista con artículos -->
-      <section class="contenido vista-lista" id="vista-lista">
-        <article onclick="mostrarDetalle('introduccion')">
-          <img src="./imagenes/intro.jpg" alt="Hada en flor de agua">
-          <div>
-            <h2>Introducción</h2>
-            <p>Lorem ipsum dolor sit amet...</p>
-          </div>
-        </article>
+    <!-- Scripts para cambiar vistas y panel lateral -->
+    <script>
+      function mostrarDetalle(tipo) {
+        document.getElementById("vista-lista").classList.add("hidden");
+        document
+          .querySelectorAll(".vista-detalle")
+          .forEach((v) => v.classList.remove("active"));
+        document.getElementById("detalle-" + tipo).classList.add("active");
+        document.querySelector(".detalle-overlay").classList.add("active");
+        window.scrollTo(0, 0);
+      }
 
-        <article onclick="mostrarDetalle('historia')">
-          <img src="./imagenes/historia.jpg" alt="Portada libro demonología">
-          <div>
-            <h2>Historia</h2>
-            <p>Lorem ipsum dolor sit amet...</p>
-          </div>
-        </article>
+      function volverLista() {
+        document
+          .querySelectorAll(".vista-detalle")
+          .forEach((v) => v.classList.remove("active"));
+        document.getElementById("vista-lista").classList.remove("hidden");
+        document.querySelector(".detalle-overlay").classList.remove("active");
+        window.scrollTo(0, 0);
+      }
 
-        <article onclick="mostrarDetalle('tipos')">
-          <img src="./imagenes/tipos1.jpg" alt="Hada danzando">
-          <div>
-            <h2>Tipos de hadas</h2>
-            <p>Lorem ipsum dolor sit amet...</p>
-          </div>
-        </article>
-      </section>
+      function openPanel() {
+        const overlay = document.getElementById("panel-overlay");
+        overlay.classList.add("active");
+        overlay.setAttribute("aria-hidden", "false");
+        document
+          .getElementById("menu-btn")
+          .setAttribute("aria-expanded", "true");
+      }
 
-      <!-- Vista detalle: Introducción -->
-      <div class="vista-detalle" id="detalle-introduccion">
-        <section class="detalle-articulo">
-          <button class="btn volver" onclick="volverLista()">← Volver</button>
+      function closePanel() {
+        const overlay = document.getElementById("panel-overlay");
+        overlay.classList.remove("active");
+        overlay.setAttribute("aria-hidden", "true");
+        document
+          .getElementById("menu-btn")
+          .setAttribute("aria-expanded", "false");
+      }
 
-          <div class="detalle-content">
-            <div class="detalle-texto">
-              <h2>Introducción</h2>
-              <p>Enchant spell troll charming gentle...</p>
-            </div>
-            <div class="detalle-imagenes">
-              <img src="https://via.placeholder.com/400x300/D1E5A0/333333?text=Imagen+1" alt="Imagen 1 de la introducción">
-                <img src="https://via.placeholder.com/400x300/D1E5A0/333333?text=Imagen+2" alt="Imagen 2 de la introducción">
-            </div>
-          </div>
-        </section>
-      </div>
+      document.getElementById("menu-btn").addEventListener("click", openPanel);
+      document
+        .getElementById("cerrar-panel")
+        .addEventListener("click", closePanel);
 
-      <!-- Vista detalle: Historia -->
-      <div class="vista-detalle" id="detalle-historia">
-        <section class="detalle-articulo">
-          <button class="btn volver" onclick="volverLista()">← Volver</button>
+      document
+        .getElementById("panel-overlay")
+        .addEventListener("click", function (e) {
+          if (e.target === this) closePanel();
+        });
 
-          <div class="detalle-content">
-            <div class="detalle-texto">
-              <h2>Historia</h2>
-              <p>Ancient tales speak of magical beings...</p>
-            </div>
-          </div>
-        </section>
-      </div>
-
-      <!-- Vista detalle: Tipos de hadas -->
-      <div class="vista-detalle" id="detalle-tipos">
-        <section class="detalle-articulo">
-          <button class="btn volver" onclick="volverLista()">← Volver</button>
-
-          <div class="detalle-content">
-            <div class="detalle-texto">
-              <h2>Tipos de hadas</h2>
-              <p>Las hadas se clasifican...</p>
-            </div>
-          </div>
-        </section>
-      </div>
-
-      <!-- Aside con galería y bibliografía -->
-      <aside>
-        <section class="galeria">
-          <h3>Galería de Imágenes</h3>
-          <div class="imagenes">
-            <img src="./imagenes/fairy2.jpg" alt="Hada en el estanque">
-            <img src="./imagenes/fairy3.jpg" alt="Hada en el bosque">
-            <img src="./imagenes/fairy1.jpg" alt="Pradera con setas y hadas">
-            <img src="./imagenes/fairyring.jpg" alt="Anillo de hadas">
-          </div>
-        </section>
-
-        <section class="bibliografia">
-          <h3>Bibliografía</h3>
-          <ul>
-            <li><a href="#">Enlace1</a></li>
-            <li><a href="#">Enlace2</a></li>
-            <li><a href="#">Enlace3</a></li>
-          </ul>
-        </section>
-      </aside>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-      <p>© 2025 Lucía Pascual López-Roca</p>
-    </footer>
-  </div>
-
-  <!-- Scripts para cambiar vistas y panel lateral -->
-  <script>
-    function mostrarDetalle(tipo) {
-      document.getElementById("vista-lista").classList.add("hidden");
-      document.querySelectorAll(".vista-detalle").forEach(v => v.classList.remove("active"));
-      document.getElementById("detalle-" + tipo).classList.add("active");
-      document.querySelector('.detalle-overlay').classList.add('active');
-      window.scrollTo(0, 0);
-    }
-
-    function volverLista() {
-      document.querySelectorAll(".vista-detalle").forEach(v => v.classList.remove("active"));
-      document.getElementById("vista-lista").classList.remove("hidden");
-      document.querySelector('.detalle-overlay').classList.remove('active');
-      window.scrollTo(0, 0);
-    }
-
-    function openPanel() {
-      const overlay = document.getElementById('panel-overlay');
-      overlay.classList.add('active');
-      overlay.setAttribute('aria-hidden', 'false');
-      document.getElementById('menu-btn').setAttribute('aria-expanded', 'true');
-    }
-
-    function closePanel() {
-      const overlay = document.getElementById('panel-overlay');
-      overlay.classList.remove('active');
-      overlay.setAttribute('aria-hidden', 'true');
-      document.getElementById('menu-btn').setAttribute('aria-expanded', 'false');
-    }
-
-    document.getElementById('menu-btn').addEventListener('click', openPanel);
-    document.getElementById('cerrar-panel').addEventListener('click', closePanel);
-
-    document.getElementById('panel-overlay').addEventListener('click', function (e) {
-      if (e.target === this) closePanel();
-    });
-
-    document.querySelectorAll('#panel .panel-nav a').forEach(a => {
-      a.addEventListener('click', function () {
-        setTimeout(closePanel, 0);
+      document.querySelectorAll("#panel .panel-nav a").forEach((a) => {
+        a.addEventListener("click", function () {
+          setTimeout(closePanel, 0);
+        });
       });
-    });
-  </script>
-
-</body>
+    </script>
+  </body>
 </html>
