@@ -7,82 +7,197 @@
   <link rel="stylesheet" href="./styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Princess+Sofia&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+  <link rel="apple-touch-icon" sizes="180x180" href="./imagenes/logo.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./imagenes/logo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./imagenes/logo.png">
+  <link rel="shortcut icon" href="./imagenes/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="./imagenes/favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#D1E5A0">
 </head>
 
 <body>
+  <!-- Toggle para modo oscuro -->
   <input type="checkbox" id="modo-toggle" class="modo-toggle" aria-hidden="true" />
   <div class="site">
-  <header>
-    <nav class="navbar">
-      <button class="menu">&#9776;</button>
-      <div class="logo">
-        <img src="./imagenes/logo.png" alt="Hada logo">
+
+    <!-- Header principal con navegación -->
+    <header>
+      <nav class="navbar">
+        <button class="menu" id="menu-btn" aria-expanded="false" aria-controls="panel">&#9776;</button>
+        <div class="logo">
+          <img src="./imagenes/logo.png" alt="Hada logo">
+        </div>
+        <h1>Folclore: El origen de las hadas</h1>
+        <div class="acciones">
+          <button class="btn">Iniciar sesión</button>
+          <label class="modo" for="modo-toggle">☀</label>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Panel lateral oculto inicialmente -->
+    <div id="panel-overlay" class="panel-overlay" aria-hidden="true">
+      <div id="panel" class="panel" role="dialog" aria-modal="true">
+        <button class="btn cerrar-panel" id="cerrar-panel" aria-label="Cerrar panel">×</button>
+        <nav class="panel-nav">
+          <h3>Menú</h3>
+          <ul>
+            <li><a href="#" onclick="mostrarDetalle('introduccion'); return false;">Introducción</a></li>
+            <li><a href="#" onclick="mostrarDetalle('historia'); return false;">Historia</a></li>
+            <li><a href="#" onclick="mostrarDetalle('tipos'); return false;">Tipos de hadas</a></li>
+            <li><a href="#">Galería</a></li>
+          </ul>
+        </nav>
       </div>
-      <h1>Folclore: El origen de las hadas</h1>
-      <div class="acciones">
-        <button class="btn">Iniciar sesión</button>
-        <label class="modo" for="modo-toggle" aria-label="Alternar modo oscuro" title="Alternar modo oscuro">☀</label>
-      </div>
-    </nav>
-  </header>
+    </div>
 
-  <main>
-    <section class="contenido">
-      <article>
-        <img src="./imagenes/intro.jpg" alt="Hada en flor de agua">
-        <div>
-          <h2>Introducción</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipiscing elit, eros vulputate lacus semper nisi mi posuere, in fermentum lectus vel at class. Maecenas imperdiet id rutrum parturient suspendisse taciti placerat in dignissim, magna pretium class rhoncus hac est proin congue...</p>
-        </div>
-      </article>
+    <main>
+      <!-- Vista lista con artículos -->
+      <section class="contenido vista-lista" id="vista-lista">
+        <article onclick="mostrarDetalle('introduccion')">
+          <img src="./imagenes/intro.jpg" alt="Hada en flor de agua">
+          <div>
+            <h2>Introducción</h2>
+            <p>Lorem ipsum dolor sit amet...</p>
+          </div>
+        </article>
 
-      <article>
-        <img src="./imagenes/historia.jpg" alt="Portada libro demonología">
-        <div>
-          <h2>Historia</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipiscing elit, eros vulputate lacus semper nisi mi posuere, in fermentum lectus vel at class. Maecenas imperdiet id rutrum parturient suspendisse taciti placerat in dignissim, magna pretium class rhoncus hac est proin congue...</p>
-        </div>
-      </article>
+        <article onclick="mostrarDetalle('historia')">
+          <img src="./imagenes/historia.jpg" alt="Portada libro demonología">
+          <div>
+            <h2>Historia</h2>
+            <p>Lorem ipsum dolor sit amet...</p>
+          </div>
+        </article>
 
-      <article>
-        <img src="./imagenes/tipos1.jpg" alt="Hada danzando">
-        <div>
-          <h2>Tipos de hadas</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipiscing elit, eros vulputate lacus semper nisi mi posuere, in fermentum lectus vel at class. Maecenas imperdiet id rutrum parturient suspendisse taciti placerat in dignissim, magna pretium class rhoncus hac est proin congue...</p>
-        </div>
-      </article>
-    </section>
-
-    <aside>
-      <section class="galeria">
-        <h3>Galería de Imágenes</h3>
-        <div class="imagenes">
-          <img src="./imagenes/fairy2.jpg" alt="Cuadro de un hada">
-          <img src="./imagenes/fairy3.jpg" alt="Niña rodeada de hadas">
-          <img src="./imagenes/fairy1.jpg" alt="Niña dormida rodeada por hadas">
-          <img src="./imagenes/fairyring.jpg" alt="Circulo de setas">
-        </div>
+        <article onclick="mostrarDetalle('tipos')">
+          <img src="./imagenes/tipos1.jpg" alt="Hada danzando">
+          <div>
+            <h2>Tipos de hadas</h2>
+            <p>Lorem ipsum dolor sit amet...</p>
+          </div>
+        </article>
       </section>
 
-      <section class="bibliografia">
-        <h3>Bibliografía</h3>
-        <ul>
-          <li><a href="#">Enlace1</a></li>
-          <li><a href="#">Enlace2</a></li>
-          <li><a href="#">Enlace3</a></li>
-        </ul>
-      </section>
-    </aside>
-  </main>
+      <!-- Vista detalle: Introducción -->
+      <div class="vista-detalle" id="detalle-introduccion">
+        <section class="detalle-articulo">
+          <button class="btn volver" onclick="volverLista()">← Volver</button>
 
-  <footer>
-    <p>© 2025 Lucía Pascual López-Roca | Todos los derechos reservados</p>
-    <nav>
-      <a href="https://github.com/lucialikescoding">Github</a>
-      <a href="www.linkedin.com/in/lucía-pascual-lópez-roca-8680b3185">LinkedIn</a>
-    </nav>
-  </footer>
+          <div class="detalle-content">
+            <div class="detalle-texto">
+              <h2>Introducción</h2>
+              <p>Enchant spell troll charming gentle...</p>
+            </div>
+            <div class="detalle-imagenes">
+              <img src="https://via.placeholder.com/400x300/D1E5A0/333333?text=Imagen+1">
+              <img src="https://via.placeholder.com/400x300/D1E5A0/333333?text=Imagen+2">
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Vista detalle: Historia -->
+      <div class="vista-detalle" id="detalle-historia">
+        <section class="detalle-articulo">
+          <button class="btn volver" onclick="volverLista()">← Volver</button>
+
+          <div class="detalle-content">
+            <div class="detalle-texto">
+              <h2>Historia</h2>
+              <p>Ancient tales speak of magical beings...</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Vista detalle: Tipos de hadas -->
+      <div class="vista-detalle" id="detalle-tipos">
+        <section class="detalle-articulo">
+          <button class="btn volver" onclick="volverLista()">← Volver</button>
+
+          <div class="detalle-content">
+            <div class="detalle-texto">
+              <h2>Tipos de hadas</h2>
+              <p>Las hadas se clasifican...</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Aside con galería y bibliografía -->
+      <aside>
+        <section class="galeria">
+          <h3>Galería de Imágenes</h3>
+          <div class="imagenes">
+            <img src="./imagenes/fairy2.jpg">
+            <img src="./imagenes/fairy3.jpg">
+            <img src="./imagenes/fairy1.jpg">
+            <img src="./imagenes/fairyring.jpg">
+          </div>
+        </section>
+
+        <section class="bibliografia">
+          <h3>Bibliografía</h3>
+          <ul>
+            <li><a href="#">Enlace1</a></li>
+            <li><a href="#">Enlace2</a></li>
+            <li><a href="#">Enlace3</a></li>
+          </ul>
+        </section>
+      </aside>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>© 2025 Lucía Pascual López-Roca</p>
+    </footer>
   </div>
+
+  <!-- Scripts para cambiar vistas y panel lateral -->
+  <script>
+    function mostrarDetalle(tipo) {
+      document.getElementById("vista-lista").classList.add("hidden");
+      document.querySelectorAll(".vista-detalle").forEach(v => v.classList.remove("active"));
+      document.getElementById("detalle-" + tipo).classList.add("active");
+      document.querySelector('.detalle-overlay').classList.add('active');
+      window.scrollTo(0, 0);
+    }
+
+    function volverLista() {
+      document.querySelectorAll(".vista-detalle").forEach(v => v.classList.remove("active"));
+      document.getElementById("vista-lista").classList.remove("hidden");
+      document.querySelector('.detalle-overlay').classList.remove('active');
+      window.scrollTo(0, 0);
+    }
+
+    function openPanel() {
+      const overlay = document.getElementById('panel-overlay');
+      overlay.classList.add('active');
+      overlay.setAttribute('aria-hidden', 'false');
+      document.getElementById('menu-btn').setAttribute('aria-expanded', 'true');
+    }
+
+    function closePanel() {
+      const overlay = document.getElementById('panel-overlay');
+      overlay.classList.remove('active');
+      overlay.setAttribute('aria-hidden', 'true');
+      document.getElementById('menu-btn').setAttribute('aria-expanded', 'false');
+    }
+
+    document.getElementById('menu-btn').addEventListener('click', openPanel);
+    document.getElementById('cerrar-panel').addEventListener('click', closePanel);
+
+    document.getElementById('panel-overlay').addEventListener('click', function (e) {
+      if (e.target === this) closePanel();
+    });
+
+    document.querySelectorAll('#panel .panel-nav a').forEach(a => {
+      a.addEventListener('click', function () {
+        setTimeout(closePanel, 0);
+      });
+    });
+  </script>
+
 </body>
 </html>
