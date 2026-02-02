@@ -546,7 +546,7 @@ table {
   border-collapse: collapse;
   margin: 1rem 0;
   font-family: 'Cormorant Upright', serif;
-  background-color: var(--color-caja); /* Puedes usar otro color de fondo */
+  background-color: var(--color-caja);
   color: var(--color-texto);
 }
 
@@ -558,24 +558,22 @@ table td {
 }
 
 table th {
-  background-color: var(--color-header); /* Encabezado más oscuro */
+  background-color: var(--color-header);
   color: #fff;
 }
 
 table tr:nth-child(even) {
-  background-color: rgba(255, 255, 255, 0.3); /* Filas alternas más claras */
+  background-color: rgba(255, 255, 255, 0.3); 
 }
 
 table tr:hover {
-  background-color: rgba(0, 0, 0, 0.1); /* Resaltar fila al pasar el mouse */
+  background-color: rgba(0, 0, 0, 0.1); 
 }
 
-/* Responsive: panel lateral */
 @media (min-width: 901px) {
   .panel { position: fixed; left: 0; top: 0; bottom: 0; }
 }
 
-/* Responsive: imágenes pequeñas */
 @media (max-width: 700px) {
   .imagenes img {
     width: 90%;
