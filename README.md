@@ -3,7 +3,7 @@
 
 Repository created by **Lucía Pascual López-Roca** for the _Web Interface Design_ module.  
 This project is part of the learning activities for practicing **HTML**, **CSS**, **JAVASCRIPT** and **BOOTSTRAP**
-![Project Preview](./imagenes/captura-proyecto.png)
+![Project Preview](./evaluacion1/imagenes/captura-proyecto.png)
 
 ---
 
