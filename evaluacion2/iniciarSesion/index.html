@@ -32,7 +32,7 @@
     <input type="checkbox" id="modo-toggle" class="modo-toggle" aria-hidden="true">
     
     <div class="site">
-        <!-- Header con Navbar de Bootstrap -->
+        <!-- Header con Navbar -->
         <header>
             <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid">
@@ -67,15 +67,9 @@
             <div class="offcanvas-body">
                 <nav class="panel-nav">
                     <ul class="list-unstyled">
-                        <li class="mb-3">
-                            <a href="#" onclick="mostrarDetalle('introduccion'); return false;" data-bs-dismiss="offcanvas">Introducción</a>
-                        </li>
-                        <li class="mb-3">
-                            <a href="#" onclick="mostrarDetalle('historia'); return false;" data-bs-dismiss="offcanvas">Historia</a>
-                        </li>
-                        <li class="mb-3">
-                            <a href="#" onclick="mostrarDetalle('tipos'); return false;" data-bs-dismiss="offcanvas">Tipos de hadas</a>
-                        </li>
+                        <li><a href="#" onclick="mostrarDetalle('introduccion')" data-bs-dismiss="offcanvas">Introducción</a></li>
+                        <li class="mt-3"><a href="#" onclick="mostrarDetalle('historia')" data-bs-dismiss="offcanvas">Historia</a></li>
+                        <li class="mt-3"><a href="#" onclick="mostrarDetalle('tipos')" data-bs-dismiss="offcanvas">Tipos de hadas</a></li>
                     </ul>
                 </nav>
             </div>
@@ -84,9 +78,10 @@
         <!-- Main con Grid de Bootstrap -->
         <main class="container-fluid px-3 py-3">
             <div class="row g-3">
-                <!-- Columna principal (contenido) -->
+                <!-- CONTENIDO PRINCIPAL -->
                 <div class="col-lg-8">
-                    <!-- Vista lista con artículos -->
+
+                    <!-- Vista lista (ARTÍCULOS) -->
                     <section class="contenido vista-lista p-3 rounded-4" id="vista-lista">
                         <!-- Artículo 1: Introducción -->
                         <article class="card mb-3 article-card" onclick="mostrarDetalle('introduccion')">
@@ -397,10 +392,11 @@
                     </div>
                 </div>
 
-                <!-- Columna lateral (aside) -->
+                <!-- ASIDE -->
                 <div class="col-lg-4">
                     <aside>
-                        <!-- Galería de Imágenes -->
+
+                        <!-- Galería -->
                         <section class="galeria p-3 rounded-4 mb-3">
                             <h3>Galería de Imágenes</h3>
                             <div class="row g-2">
@@ -427,6 +423,7 @@
                                 <li class="mt-2"><a href="#">https://es.wikipedia.org/wiki/Hada#Origen</a></li>
                             </ul>
                         </section>
+
                     </aside>
                 </div>
             </div>
@@ -434,66 +431,56 @@
 
         <!-- Footer -->
         <footer class="text-center py-3">
-            <p class="mb-2">© 2025 Lucía Pascual López-Roca</p>
-            <div>
-                <a href="https://github.com/lucialikescoding/DIW_LuciaPascual.git" class="mx-3">Github</a>
-                <a href="www.linkedin.com/in/lucía-pascual-lópez-roca-8680b3185" class="mx-3">Linkedin</a>
-            </div>
+            <p>© 2025 Lucía Pascual López-Roca</p>
+            <a href="https://github.com/lucialikescoding/DIW_LuciaPascual.git">Github</a> ·
+            <a href="www.linkedin.com/in/lucía-pascual-lópez-roca-8680b3185">Linkedin</a>
         </footer>
     </div>
 
-        <!-- Modal Carrusel Galería (Swiper) -->
-        <div class="modal fade modal-galeria" id="modalCarrusel" tabindex="-1" aria-labelledby="modalCarruselLabel" aria-hidden="true">
-            <div class="modal-dialog modal-fullscreen-sm-down modal-lg modal-dialog-centered">
-                <div class="modal-content modal-carrusel-content">
-                    <button type="button" class="btn-close btn-close-white btn-cerrar-modal" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-                    <div class="swiper galeria-swiper">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <img src="./imagenes/fairy2.jpg" alt="Hada en el estanque">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="./imagenes/fairy3.jpg" alt="Hada en el bosque">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="./imagenes/fairy1.jpg" alt="Pradera con setas y hadas">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="./imagenes/fairyring.jpg" alt="Anillo de hadas">
-                            </div>
-                        </div>
-                        <!-- Botones prev/next -->
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-button-next"></div>
-                        <!-- Paginación puntos -->
-                        <div class="swiper-pagination"></div>
+    <!-- Modal Carrusel -->
+    <div class="modal fade modal-galeria" id="modalCarrusel" tabindex="-1">
+        <div class="modal-dialog modal-fullscreen-sm-down modal-lg modal-dialog-centered">
+            <div class="modal-content modal-carrusel-content">
+
+                <button type="button" class="btn-close btn-close-white btn-cerrar-modal" data-bs-dismiss="modal"></button>
+
+                <div class="swiper galeria-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="./imagenes/fairy2.jpg"></div>
+                        <div class="swiper-slide"><img src="./imagenes/fairy3.jpg"></div>
+                        <div class="swiper-slide"><img src="./imagenes/fairy1.jpg"></div>
+                        <div class="swiper-slide"><img src="./imagenes/fairyring.jpg"></div>
                     </div>
+
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-pagination"></div>
                 </div>
             </div>
         </div>
-    
-        <!-- Modal Iniciar Sesión -->
-        <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="modalLoginLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-login-dialog">
-                <div class="modal-content modal-login-content">
-                    <div class="modal-body modal-login-body">
-                        <label for="login-email" class="login-label">Email</label>
-                        <input type="email" id="login-email" class="login-input" placeholder="">
+    </div>
 
-                        <label for="login-contra" class="login-label">Contraseña</label>
-                        <input type="password" id="login-contra" class="login-input" placeholder="">
+    <!-- Modal Login -->
+    <div class="modal fade" id="modalLogin" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-login-dialog">
+            <div class="modal-content modal-login-content">
+                <div class="modal-body modal-login-body">
+                    <label>Email</label>
+                    <input type="email" class="login-input">
 
-                        <button type="button" class="btn login-btn">Iniciar sesión</button>
+                    <label>Contraseña</label>
+                    <input type="password" class="login-input">
 
-                        <p class="login-pie">No tienes cuenta? <a href="#" class="login-enlace">Crea una</a></p>
-                    </div>
+                    <button type="button" class="btn login-btn">Iniciar sesión</button>
+
+                    <p>No tienes cuenta? <a href="#">Crea una</a></p>
                 </div>
             </div>
         </div>
+    </div>
 
-    <!-- Bootstrap JS -->
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <!-- Scripts personalizados -->
@@ -511,18 +498,22 @@
             window.scrollTo(0, 0);
         }
 
-        // ── Carrusel Galería (Swiper + Modal Bootstrap) ──
-        let swiperInstance = null;
-
+        /* Inicializar Swiper */
         const swiper = new Swiper('.galeria-swiper', {
             loop: true,
             pagination: { el: '.swiper-pagination', clickable: true },
             navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
-            keyboard: { enabled: true },
-            mousewheel: { forceToScrollMode: 'race' },
+            keyboard: true
         });
 
-        // ── Modo oscuro sincronizado al modal de login ──
+        /* ABRIR CARRUSEL */
+        function abrirCarrusel(indice) {
+            const modal = bootstrap.Modal.getOrCreateInstance(document.getElementById('modalCarrusel'));
+            modal.show();
+            swiper.slideToLoop(indice, 0);
+        }
+
+        /* Modo oscuro sincronizado */
         const modoToggle = document.getElementById('modo-toggle');
         const modalLoginEl = document.getElementById('modalLogin');
 
@@ -531,13 +522,8 @@
         }
 
         modoToggle.addEventListener('change', sincronizarModoModal);
-
-        // También sincronizar cuando se abre el modal (por si el modo cambió mientras estaba cerrado)
         modalLoginEl.addEventListener('show.bs.modal', sincronizarModoModal);
-            swiper.slideTo(indice, 0);
-            const modal = bootstrap.Modal.getOrCreateInstance(document.getElementById('modalCarrusel'));
-            modal.show();
-        }
     </script>
+
 </body>
 </html>
