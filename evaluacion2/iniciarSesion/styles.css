@@ -8,6 +8,7 @@
     --color-texto: #333;
     --color-acento: #CF9788;
     --darkmode-caja: #705D3A;
+    --darkmode-marron: #A16758;
     --darkmode-fondo: #342929;
     --darkmode-acento: #D1E5A0;
     
@@ -356,7 +357,7 @@ footer a:hover {
 
 /* Artículos */
 #modo-toggle:checked ~ .site .article-card {
-    background-color: var(--darkmode-acento);
+    background-color: var(--darkmode-marron);
     border: none;
     color: #000;
 }
@@ -374,7 +375,7 @@ footer a:hover {
 
 #modo-toggle:checked ~ .site .detalle-texto,
 #modo-toggle:checked ~ .site .detalle-imagenes {
-    background-color: var(--darkmode-acento);
+    background-color: var(--darkmode-marron);
 }
 
 #modo-toggle:checked ~ .site .detalle-texto h2,
@@ -446,7 +447,7 @@ footer a:hover {
     top: 14px;
     right: 14px;
     z-index: 10;
-    filter: drop-shadow(0 1px 3px rgba(0,0,0,0.6));
+    filter: drop-shadow(5 1px 3px rgb(255, 253, 253));
 }
 
 /* ── Swiper general ── */
@@ -512,7 +513,7 @@ footer a:hover {
 }
 
 .modal-login-content {
-    background-color: var(--color-header);   /* rosa #CF9788 */
+    background-color: var(--color-fondo);   
     border: none;
     border-radius: 16px;
     box-shadow: 0 8px 30px rgba(0,0,0,0.25);
@@ -540,7 +541,7 @@ footer a:hover {
     padding: 0.6rem 0.8rem;
     border: none;
     border-radius: 10px;
-    background-color: var(--color-fondo);   /* crema #FCF2CE */
+    background-color: white;  
     font-family: var(--fuente-texto);
     font-size: 1.05rem;
     color: var(--color-texto);
@@ -558,7 +559,7 @@ footer a:hover {
 .login-btn {
     width: 100%;
     padding: 0.7rem;
-    background-color: var(--color-caja);    /* verde #D1E5A0 */
+    background-color: var(--color-header);    
     border: none;
     border-radius: 10px;
     font-family: var(--fuente-texto);
@@ -571,7 +572,7 @@ footer a:hover {
 }
 
 .login-btn:hover {
-    opacity: 0.88;
+    background-color: #A16758;
 }
 
 /* Pie "No tienes cuenta?" */
@@ -597,16 +598,15 @@ footer a:hover {
    Modal – Iniciar Sesión (modo oscuro)
    ======================================== */
 .modal-login-dark .modal-login-content {
-    background-color: var(--color-fondo);   /* crema #FCF2CE */
+    background-color: var(--darkmode-marron);   
 }
 
 .modal-login-dark .login-label {
-    color: var(--color-texto);
+    color: black;
 }
 
 .modal-login-dark .login-input {
-    background-color: #F5E6E0;             /* rosado claro */
-    color: var(--color-texto);
+    background-color: var(--color-fondo);           
 }
 
 .modal-login-dark .login-input:focus {
@@ -614,8 +614,12 @@ footer a:hover {
 }
 
 .modal-login-dark .login-btn {
-    background-color: var(--color-header);  /* rosa #CF9788 */
-    color: #fff;
+    background-color: var(--darkmode-acento);  
+    color: var(--color-texto);
+}
+
+.modal-login-dark .login-btn :hover{
+    background-color: #9baa76;  
 }
 
 .modal-login-dark .login-pie {
