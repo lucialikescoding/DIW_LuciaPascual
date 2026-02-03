@@ -356,7 +356,7 @@ footer a:hover {
 
 /* Artículos */
 #modo-toggle:checked ~ .site .article-card {
-    background-color: #A16758;
+    background-color: var(--darkmode-acento);
     border: none;
     color: #000;
 }
@@ -446,7 +446,7 @@ footer a:hover {
     top: 14px;
     right: 14px;
     z-index: 10;
-    filter: drop-shadow(0 1px 3px rgb(255, 255, 255));
+    filter: drop-shadow(0 1px 3px rgba(0,0,0,0.6));
 }
 
 /* ── Swiper general ── */
@@ -502,6 +502,128 @@ footer a:hover {
    ======================================== */
 #modo-toggle:checked ~ .site .modal-carrusel-content {
     background: #1a1210;
+}
+
+/* ========================================
+   Modal – Iniciar Sesión (modo claro)
+   ======================================== */
+.modal-login-dialog {
+    max-width: 380px;
+}
+
+.modal-login-content {
+    background-color: var(--color-header);   /* rosa #CF9788 */
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+}
+
+.modal-login-body {
+    padding: 2rem 1.8rem 1.6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+/* Labels */
+.login-label {
+    font-family: var(--fuente-texto);
+    font-size: 1.15rem;
+    color: var(--color-texto);
+    margin-bottom: 0.35rem;
+    font-weight: 600;
+}
+
+/* Campos de texto */
+.login-input {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--color-fondo);   /* crema #FCF2CE */
+    font-family: var(--fuente-texto);
+    font-size: 1.05rem;
+    color: var(--color-texto);
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+    outline: none;
+    transition: box-shadow 0.2s;
+}
+
+.login-input:focus {
+    box-shadow: 0 0 0 2px rgba(209, 229, 160, 0.6);
+}
+
+/* Botón Iniciar sesión */
+.login-btn {
+    width: 100%;
+    padding: 0.7rem;
+    background-color: var(--color-caja);    /* verde #D1E5A0 */
+    border: none;
+    border-radius: 10px;
+    font-family: var(--fuente-texto);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--color-texto);
+    cursor: pointer;
+    margin-top: 0.25rem;
+    transition: opacity 0.2s;
+}
+
+.login-btn:hover {
+    opacity: 0.88;
+}
+
+/* Pie "No tienes cuenta?" */
+.login-pie {
+    font-family: var(--fuente-texto);
+    font-size: 0.95rem;
+    color: var(--color-texto);
+    text-align: center;
+    margin: 1rem 0 0;
+}
+
+.login-enlace {
+    color: var(--color-texto);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.login-enlace:hover {
+    opacity: 0.7;
+}
+
+/* ========================================
+   Modal – Iniciar Sesión (modo oscuro)
+   ======================================== */
+.modal-login-dark .modal-login-content {
+    background-color: var(--color-fondo);   /* crema #FCF2CE */
+}
+
+.modal-login-dark .login-label {
+    color: var(--color-texto);
+}
+
+.modal-login-dark .login-input {
+    background-color: #F5E6E0;             /* rosado claro */
+    color: var(--color-texto);
+}
+
+.modal-login-dark .login-input:focus {
+    box-shadow: 0 0 0 2px rgba(207, 151, 136, 0.5);
+}
+
+.modal-login-dark .login-btn {
+    background-color: var(--color-header);  /* rosa #CF9788 */
+    color: #fff;
+}
+
+.modal-login-dark .login-pie {
+    color: var(--color-texto);
+}
+
+.modal-login-dark .login-enlace {
+    color: var(--color-texto);
 }
 
 /* ========================================
