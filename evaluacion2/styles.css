@@ -1,0 +1,552 @@
+/* ========================================
+   Variables CSS - Colores y fuentes originales
+   ======================================== */
+:root {
+    --color-fondo: #FCF2CE;
+    --color-header: #CF9788;
+    --color-caja: #D1E5A0;
+    --color-texto: #333;
+    --color-acento: #CF9788;
+    --darkmode-caja: #705D3A;
+    --darkmode-fondo: #342929;
+    --darkmode-acento: #D1E5A0;
+    
+    --fuente-titulo: 'Princess Sofia', cursive;
+    --fuente-texto: 'Cormorant Upright', serif;
+}
+
+/* ========================================
+   Toggle de modo oscuro (oculto)
+   ======================================== */
+#modo-toggle {
+    position: absolute;
+    left: -9999px;
+}
+
+/* ========================================
+   Estilos base del sitio
+   ======================================== */
+.site {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    transition: background-color 300ms ease, color 300ms ease;
+    min-height: 100vh;
+}
+
+body {
+    margin: 0;
+    font-family: var(--fuente-texto);
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+}
+
+/* ========================================
+   Header y Navbar
+   ======================================== */
+header {
+    background-color: var(--color-header);
+    padding: 0.5rem 0;
+}
+
+.navbar {
+    padding: 0.5rem 1rem;
+}
+
+.menu-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--color-texto);
+}
+
+.logo img {
+    width: 87px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+h1 {
+    font-family: var(--fuente-titulo);
+    font-size: 2.3rem;
+    margin: 0;
+    color: var(--color-texto);
+}
+
+/* ========================================
+   Botones personalizados
+   ======================================== */
+.btn-custom {
+    background-color: var(--color-caja);
+    border: none;
+    border-radius: 15px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-family: var(--fuente-texto);
+    color: var(--color-texto);
+}
+
+.btn-custom:hover {
+    background-color: var(--color-caja);
+    opacity: 0.9;
+}
+
+.modo-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    padding: 0.5rem 0.8rem;
+}
+
+/* ========================================
+   Panel lateral (Offcanvas)
+   ======================================== */
+.panel-custom {
+    background-color: var(--color-fondo);
+    width: 300px;
+}
+
+.panel-nav a {
+    color: var(--color-texto);
+    text-decoration: none;
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    font-family: var(--fuente-texto);
+}
+
+.panel-nav a:hover {
+    text-decoration: underline;
+}
+
+.panel-nav h3 {
+    font-family: var(--fuente-titulo);
+    font-size: 1.6rem;
+}
+
+/* ========================================
+   Secciones y contenido principal
+   ======================================== */
+.contenido {
+    background-color: var(--color-caja);
+    border-radius: 15px;
+}
+
+.article-card {
+    border: 1px solid var(--color-acento);
+    border-radius: 15px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background-color: transparent;
+    overflow: hidden;
+}
+
+.article-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.article-card:active {
+    transform: translateY(0);
+}
+
+.article-img {
+    width: clamp(80px, 15vw, 120px);
+    height: clamp(120px, 20vw, 180px);
+    object-fit: cover;
+    margin: 1rem;
+}
+
+.article-card .card-body {
+    padding: 1rem 1.5rem;
+}
+
+.article-card h2 {
+    font-family: var(--fuente-titulo);
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-texto);
+}
+
+.article-card p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
+    color: var(--color-texto);
+}
+
+/* ========================================
+   Vista detalle
+   ======================================== */
+.vista-lista {
+    display: block;
+}
+
+.vista-lista.hidden {
+    display: none;
+}
+
+.vista-detalle {
+    display: none;
+}
+
+.vista-detalle.active {
+    display: block;
+}
+
+.detalle-articulo {
+    background-color: var(--color-caja);
+    border-radius: 15px;
+}
+
+.detalle-texto {
+    background-color: var(--color-fondo);
+    border-radius: 15px;
+}
+
+.detalle-texto h2 {
+    font-family: var(--fuente-titulo);
+    font-size: 2.4rem;
+    margin-bottom: 1.2rem;
+    color: var(--color-texto);
+}
+
+.detalle-texto p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: var(--color-texto);
+}
+
+.detalle-imagenes {
+    background-color: var(--color-fondo);
+    border-radius: 15px;
+}
+
+/* ========================================
+   Aside - Galería y Bibliografía
+   ======================================== */
+.galeria,
+.bibliografia {
+    background-color: var(--color-caja);
+    border-radius: 15px;
+}
+
+.galeria h3,
+.bibliografia h3 {
+    font-family: var(--fuente-titulo);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: var(--color-texto);
+}
+
+.galeria img {
+    object-fit: cover;
+    height: clamp(180px, 30vw, 250px);
+}
+
+.bibliografia a {
+    color: var(--color-texto);
+    text-decoration: none;
+}
+
+.bibliografia a:hover {
+    text-decoration: underline;
+}
+
+/* ========================================
+   Tabla personalizada
+   ======================================== */
+.table-custom {
+    font-family: var(--fuente-texto);
+    background-color: var(--color-caja);
+    color: var(--color-texto);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.table-custom thead th {
+    background-color: var(--color-header);
+    color: #fff;
+    border-color: #999;
+}
+
+.table-custom td,
+.table-custom th {
+    border-color: #999;
+    padding: 0.5rem 1rem;
+}
+
+.table-custom tbody tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.table-custom tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* ========================================
+   Footer
+   ======================================== */
+footer {
+    background-color: var(--color-header);
+    color: var(--color-texto);
+    font-size: 0.9rem;
+    font-family: var(--fuente-texto);
+}
+
+footer a {
+    color: var(--color-texto);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* ========================================
+   MODO OSCURO
+   ======================================== */
+
+/* Fondo general */
+#modo-toggle:checked ~ .site {
+    background-color: var(--darkmode-fondo);
+    color: var(--color-caja);
+}
+
+/* Header */
+#modo-toggle:checked ~ .site header {
+    background-color: var(--darkmode-caja);
+    color: var(--color-caja);
+}
+
+#modo-toggle:checked ~ .site h1 {
+    color: var(--color-caja);
+}
+
+/* Panel lateral */
+#modo-toggle:checked ~ .site .panel-custom {
+    background-color: var(--darkmode-fondo);
+    color: var(--color-caja);
+}
+
+#modo-toggle:checked ~ .site .panel-nav a {
+    color: var(--color-caja);
+}
+
+/* Botones */
+#modo-toggle:checked ~ .site .btn-custom {
+    background-color: var(--darkmode-acento);
+    color: #000;
+}
+
+/* Secciones */
+#modo-toggle:checked ~ .site .contenido,
+#modo-toggle:checked ~ .site .galeria,
+#modo-toggle:checked ~ .site .bibliografia {
+    background-color: var(--darkmode-caja);
+    color: var(--color-caja);
+}
+
+#modo-toggle:checked ~ .site .contenido h2,
+#modo-toggle:checked ~ .site .galeria h3,
+#modo-toggle:checked ~ .site .bibliografia h3 {
+    color: var(--color-caja);
+}
+
+/* Artículos */
+#modo-toggle:checked ~ .site .article-card {
+    background-color: #A16758;
+    border: none;
+    color: #000;
+}
+
+#modo-toggle:checked ~ .site .article-card h2,
+#modo-toggle:checked ~ .site .article-card p {
+    color: #000;
+}
+
+/* Vista detalle */
+#modo-toggle:checked ~ .site .detalle-articulo {
+    background-color: var(--darkmode-caja);
+    color: var(--color-caja);
+}
+
+#modo-toggle:checked ~ .site .detalle-texto,
+#modo-toggle:checked ~ .site .detalle-imagenes {
+    background-color: var(--darkmode-acento);
+}
+
+#modo-toggle:checked ~ .site .detalle-texto h2,
+#modo-toggle:checked ~ .site .detalle-texto p {
+    color: #000;
+}
+
+/* Tabla */
+#modo-toggle:checked ~ .site .table-custom {
+    background-color: var(--darkmode-caja);
+    color: var(--color-caja);
+}
+
+#modo-toggle:checked ~ .site .table-custom thead th {
+    background-color: var(--darkmode-acento);
+    color: #000;
+}
+
+#modo-toggle:checked ~ .site .table-custom td {
+    color: var(--color-caja);
+}
+
+/* Bibliografía */
+#modo-toggle:checked ~ .site .bibliografia a {
+    color: var(--color-caja);
+}
+
+/* Footer */
+#modo-toggle:checked ~ .site footer {
+    background-color: var(--darkmode-caja);
+    color: var(--color-caja);
+}
+
+#modo-toggle:checked ~ .site footer a {
+    color: var(--color-caja);
+}
+
+/* ========================================
+   Galería clicable
+   ======================================== */
+.galeria-img {
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.galeria-img:hover {
+    transform: scale(1.04);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* ========================================
+   Modal Carrusel
+   ======================================== */
+.modal-galeria .modal-content {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.modal-carrusel-content {
+    background: #111;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+}
+
+.btn-cerrar-modal {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 10;
+    filter: drop-shadow(0 1px 3px rgb(255, 255, 255));
+}
+
+/* ── Swiper general ── */
+.galeria-swiper {
+    width: 100%;
+    max-height: 80vh;
+}
+
+.galeria-swiper .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #111;
+}
+
+.galeria-swiper .swiper-slide img {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+}
+
+/* ── Botones prev / next ── */
+.galeria-swiper .swiper-button-prev,
+.galeria-swiper .swiper-button-next {
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    --swiper-navigation-size: 18px;
+    color: #fff;
+    transition: background 0.2s;
+}
+
+.galeria-swiper .swiper-button-prev:hover,
+.galeria-swiper .swiper-button-next:hover {
+    background: rgba(0, 0, 0, 0.65);
+}
+
+/* ── Paginación (puntos) ── */
+.galeria-swiper .swiper-pagination-bullet {
+    background: rgba(255, 255, 255, 0.5);
+    width: 10px;
+    height: 10px;
+    opacity: 1;
+}
+
+.galeria-swiper .swiper-pagination-bullet-active {
+    background: var(--color-caja);
+}
+
+/* ========================================
+   Modo oscuro – Modal carrusel
+   ======================================== */
+#modo-toggle:checked ~ .site .modal-carrusel-content {
+    background: #1a1210;
+}
+
+/* ========================================
+   Responsive - Tablets
+   ======================================== */
+@media (max-width: 900px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    .article-img {
+        width: clamp(100px, 25vw, 150px);
+        height: clamp(150px, 35vw, 225px);
+    }
+    
+    .article-card h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* ========================================
+   Responsive - Móviles
+   ======================================== */
+@media (max-width: 576px) {
+    h1 {
+        font-size: 1.4rem;
+    }
+    
+    .logo img {
+        width: 60px;
+        height: 55px;
+    }
+    
+    .article-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .article-img {
+        width: clamp(100px, 25vw, 150px);
+        height: clamp(150px, 35vw, 225px);
+        margin: 1rem auto;
+    }
+    
+    .galeria img {
+        height: 180px;
+    }
+}
